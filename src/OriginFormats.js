@@ -20,7 +20,8 @@
 
 	angular.module("ui.origin.formats").constant("sizes", sizes);
 
-	angular.module("ui.origin.formats").directive("originFormat", ['$Formatters', '$Validators', '$parse', function($Formatters, $Validators, $parse){
+	angular.module("ui.origin.formats").directive(
+        "originFormat", ['$Formatters', '$Validators', '$parse', function($Formatters, $Validators, $parse){
 		return {
 			restrict:"A",
 			require: '?ngModel',
@@ -57,12 +58,14 @@
 					}
 
 					if (formats[patternFormat]) {
-						value = $Formatters.formatCustom(value, sizes[patternFormat], formats[patternFormat]);
+						value = $Formatters.formatCustom(
+                            value, sizes[patternFormat], formats[patternFormat]);
 					} else if ($Formatters[patternFormat]) {
 						value = $Formatters[patternFormat](value, sizes[patternFormat]);
 					} else {
-						value = $Formatters.formatCustom(value, sizes[patternFormat], patternFormat);
-					}
+						value = $Formatters.formatCustom(
+                            value, sizes[patternFormat], patternFormat);
+                    }
 
 					// if originMask is set
 					if (patternMask) {
@@ -75,4 +78,30 @@
 			}
 		};
 	}]);
+
+
+    angular.module("ui.origin.formats").filter("originFilter", ["$Formatters", function($Formatters){
+        function filter(value, patternFormat, patternMask) {
+            if (!value) return "";
+
+            if (formats[patternFormat]) {
+                value = $Formatters.formatCustom(
+                    value, sizes[patternFormat], formats[patternFormat]);
+            } else if ($Formatters[patternFormat]) {
+                value = $Formatters[patternFormat](value, sizes[patternFormat]);
+            } else {
+                value = $Formatters.formatCustom(
+                    value, sizes[patternFormat], patternFormat);
+            }
+
+            // if originMask is set
+            if (patternMask) {
+                value = $Formatters.mask(value, patternMask);
+            }
+
+            return value;
+        }
+
+        return filter;
+    }]);
 })();
