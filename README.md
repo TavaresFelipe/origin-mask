@@ -6,17 +6,17 @@ Validation and formatter component based in angular directives/services.
 
 | Data Format | Formatter | Validator | Filter |
 |-------------|-----------|-----------|--------|
-| CustomFormat| Yes       | No        | No     |
-| BR CPF      | Yes       | Yes       | No     |
-| BR RG       | Yes       | No        | No     |
-| BR CNPJ     | Yes       | Yes       | No     |
-| E-mail      | No        | Yes       | No     |
-| Tel 8 ddd   | Yes       | No        | No     |
-| Tel 9 ddd   | Yes       | No        | No     |
-| Date        | Yes       | No        | No     |
-| Real        | Yes       | No        | No     |
-| Dolar       | Yes       | No        | No     |
-| Euro        | Yes       | No        | No     |
+| CustomFormat| Yes       | No        | Yes     |
+| BR CPF      | Yes       | Yes       | Yes     |
+| BR RG       | Yes       | No        | Yes     |
+| BR CNPJ     | Yes       | Yes       | Yes     |
+| Tel 8 ddd   | Yes       | No        | Yes     |
+| Tel 9 ddd   | Yes       | No        | Yes     |
+| Date        | Yes       | No        | Yes     |
+| Real        | Yes       | No        | Yes     |
+| Dolar       | Yes       | No        | Yes     |
+| Euro        | Yes       | No        | Yes     |
+| E-mail      | No        | Yes       | No      |
 
 ### Usage:
 
