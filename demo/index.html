@@ -24,6 +24,7 @@
         $scope.dolar = "";
         $scope.euro = "";
         $scope.mask = "";
+        $scope.creditCard = "";
 
         $scope.isValidCpf = false;
         $scope.isValidCnpj = false;
@@ -59,12 +60,16 @@ label {
 }
 
 </style>
-
 </head>
+
 <body ng-app="DemoApp">
+
+    <h3>Validação com chamada de function do controller e atualização de model</h3>
+
 	<div class="login-area" ng-controller="LoginController">
     <label class="{{ isValidCpf ? 'ok' : 'nok' }}">
        CPF: <input origin-format="cpf" type="tel" ng-model="username"  on-valid="onValid();" on-invalid="onInvalid();" />
+        {{username | originFilter:'cpf'}}
     </label>
 
     <label ng-show="isValidCpf">
@@ -72,48 +77,70 @@ label {
     </label>
     </div>
     <div>
+
+        <h3>Documentos</h3>
 	 <label class="{{ isValidEmail ? 'ok' : 'nok' }}">
 		E-MAIL: <input origin-format="email"  type="text" ng-model="email"  validate-model="isValidEmail" />
 		</label>
 		 <label >
 		RG: <input origin-format="rg" type="tel" ng-model="rg" />
+             {{rg | originFilter:'rg'}}
 		</label>
 		 <label class="{{ isValidCnpj ? 'ok' : 'nok' }}">
 		CNPJ:	<input origin-format="cnpj" type="tel" ng-model="cnpj"  validate-model="isValidCnpj"   />
+             {{cnpj | originFilter:'cnpj'}}
 		</label>
 		
 		<label>
 		TELEFONE:	<input origin-format="tel" type="tel" ng-model="tel"    />
+            {{tel | originFilter:'tel'}}
 		</label>
 		
 		<label>
 		Data:	<input origin-format="date" type="tel" ng-model="date" />
+            {{date | originFilter:'date'}}
 		</label>
 		
 		<label>
 		Data:	<input origin-format="date" type="date" ng-model="date" />
+
 		</label>
 
 
 		<label>
 		Personalizado 555-555 (R--55) 5:	<input origin-format="555-555 (R--55) 5" type="tel" ng-model="custom"    />
+            {{custom | originFilter:'555-555 (R--55) 5'}}
 		</label>
 		
 		
 		<label>
 		Real R$ 1.000,00:	<input origin-format="real" type="tel" ng-model="real"    />
+            {{real | originFilter:'real'}}
 		</label>
 		
 		<label >
 		Dolar $ 1,000.00:	<input origin-format="dolar" type="tel" ng-model="dolar" />
+            {{dolar | originFilter:'dolar'}}
 		</label>		
 		
 		<label >
 		Euro € 1,000.00:	<input origin-format="euro" type="tel" ng-model="euro" />
+            {{euro | originFilter:'euro'}}
 		</label>
 		
+
+        <h3>Mascaras</h3>
+        <p>
+        Estes features ainda estão em desenvolvimento.
+            - Criar um backup do valor inserido para recuperação.
+            - Bug ao digitar numero a numero
+        </p>
+        <label>
+		Mascara Credito 4444 4444 XXXX XX44 :	<input origin-format="4444 4444 4444 4444" origin-mask="#### #### XXXX XX##" type="tel" ng-model="creditCard" />
+		</label>
+
 		<label>
-		Mascara 444-XXX-444:	<input origin-format="real" origin-mask="###-XXX-###" type="tel" ng-model="mask" />
+		Mascara 444-XXX-444:	<input origin-format="000-000-000" origin-mask="###-XXX-###" type="tel" ng-model="mask" />
 		</label>
 		
 
