@@ -83,3 +83,34 @@ The < pattern > argument is equal to format pattern as 'cpf', 'cnpj', 'tel'... e
 {{cpfModel | originFilter:'< pattern >'}}
 
 ```
+
+### $Formatters
+
+```js
+
+if ($Formatters["cpf"]) {
+$Formatters.cpf(value, 11);
+
+or 
+
+$Formatters["cpf"](value, 11);
+
+}
+
+$Formatters.formatCustom(value, size, pattern);
+
+```
+
+### $Validators
+
+```js
+
+if ($Validators["cpf"]) {
+    var isValid = $Validators["cpf"](value, 11);
+    
+    or 
+    
+    var isValid = $Validators.cpf(value, 11);
+}
+
+```
