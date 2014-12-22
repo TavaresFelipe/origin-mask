@@ -89,11 +89,11 @@ The < pattern > argument is equal to format pattern as 'cpf', 'cnpj', 'tel'... e
 ```js
 
 if ($Formatters["cpf"]) {
-$Formatters.cpf(value, 11);
+    value = $Formatters.cpf(value, 11);
 
 or 
 
-$Formatters["cpf"](value, 11);
+    value = $Formatters["cpf"](value, 11);
 
 }
 
@@ -106,11 +106,11 @@ $Formatters.formatCustom(value, size, pattern);
 ```js
 
 if ($Validators["cpf"]) {
-    var isValid = $Validators["cpf"](value, 11);
+    isValid = $Validators["cpf"](value, 11);
     
     or 
     
-    var isValid = $Validators.cpf(value, 11);
+    isValid = $Validators.cpf(value, 11);
 }
 
 ```
