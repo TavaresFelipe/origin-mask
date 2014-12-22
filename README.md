@@ -42,20 +42,23 @@ Validation and formatter component based in angular directives/services.
 ```
 ### origin-format="cpf"
 Declare the format and validation, if it available. 
-If set a format that is not implemented, a custom format like a "4444-4444_44", then it will use to format.
+If set a format that is not implemented, a custom format like a "4444-4444_44", then it will be use to format.
 
 ### validate-model="isValidaCpf"
 A model in controller scope, that will be updated when validation ends
+
 It uses $scope.$eval(); to evaluate the model within scope
 
 ### on-valid="function()"
 A callback function that will be called when validation return true
+
 It uses $parser(func)(scope); to evaluate the func within scope
 
 Still not possible to set arguments in the function
 
 ### on-invalid="function()"
 A callback function that will be called when validation return false
+
 It uses $parser(func)(scope); to evaluate the func within scope
 
 Still not possible to set arguments in the function
