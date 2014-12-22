@@ -62,3 +62,14 @@ A callback function that will be called when validation return false
 It uses $parser(func)(scope); to evaluate the func within scope
 
 Still not possible to set arguments in the function
+
+### Filter
+Using origin filters to format data as input do. 
+
+The < pattern > argument is equal to format pattern as 'cpf', 'cnpj', 'tel'... etc
+
+```html
+
+{{cpfModel | originFilter:'< pattern >'}}
+
+```
