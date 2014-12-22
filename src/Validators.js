@@ -4,9 +4,9 @@
 	return {
 		
 		 	//this cut off the most common invalid
-			commonValid: function (value, size) {
+			commonInvalid: function (value, size) {
 				if (value.length != size) {		
-					return false;
+					return true;
 				}
 				
 				for (var j = 0; j < 9; j++) {
@@ -25,7 +25,7 @@
 	    	  
 	        	documentNumber = $Formatters.clean(documentNumber);
 	        	
-	    	    if (this.commonValid(documentNumber, size)) {
+	    	    if (this.commonInvalid(documentNumber, size)) {
 	    	        return false;
 	    	    }
 	    	    
@@ -62,7 +62,7 @@
 	    		
 	    		cnpj = $Formatters.clean(cnpj);
 	    	  
-	    	    if (this.commonValid(cnpj, size)) {
+	    	    if (this.commonInvalid(cnpj, size)) {
 	    	        return false;
 	    	    }
 	    	    
