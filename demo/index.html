@@ -5,10 +5,12 @@
 <title>DEMO</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="../dist/1.0.2/origin-formats.min.js"></script>
+<script src="../src/OriginFormats.js"></script>
+<script src="../src/Formatters.js"></script>
+<script src="../src/Validators.js"></script>
 <script>
 	var DemoApp = angular.module("DemoApp", ["ui.origin.formats"]);
-	
+
 	DemoApp.controller("LoginController", ['$scope', '$Formatters', function($scope, $Formatters){
         $scope.cpf = "";
         $scope.password = "";
@@ -27,19 +29,19 @@
         $scope.isValidCpf = false;
         $scope.isValidCnpj = false;
         $scope.isValidEmail = false;
-        
+
         $scope.login = function(){
             console.log();
         }
-        
+
         $scope.onValid = function(){
         	$scope.isValidCpf = true;
         }
-        
+
         $scope.onInvalid = function(){
         	$scope.isValidCpf = false;
         }
-        
+
 	}]);
 </script>
 
@@ -88,17 +90,17 @@ label {
 		CNPJ:	<input origin-format="cnpj" type="tel" ng-model="cnpj"  validate-model="isValidCnpj"   />
              {{cnpj | originFilter:'cnpj'}}
 		</label>
-		
+
 		<label>
 		TELEFONE:	<input origin-format="tel" type="tel" ng-model="tel"    />
             {{tel | originFilter:'tel'}}
 		</label>
-		
+
 		<label>
 		Data:	<input origin-format="date" type="tel" ng-model="date" />
             {{date | originFilter:'date'}}
 		</label>
-		
+
 		<label>
 		Data:	<input origin-format="date" type="date" ng-model="date" />
 
@@ -109,23 +111,23 @@ label {
 		Personalizado 555-555 (R--55) 5:	<input origin-format="555-555 (R--55) 5" type="tel" ng-model="custom"    />
             {{custom | originFilter:'555-555 (R--55) 5'}}
 		</label>
-		
-		
+
+
 		<label>
 		Real R$ 1.000,00:	<input origin-format="real" type="tel" ng-model="real"    />
             {{real | originFilter:'real'}}
 		</label>
-		
+
 		<label >
 		Dolar $ 1,000.00:	<input origin-format="dolar" type="tel" ng-model="dolar" />
             {{dolar | originFilter:'dolar'}}
-		</label>		
-		
+		</label>
+
 		<label >
 		Euro € 1,000.00:	<input origin-format="euro" type="tel" ng-model="euro" />
             {{euro | originFilter:'euro'}}
 		</label>
-		
+
 
         <h3>Mascaras</h3>
         <p>
@@ -140,9 +142,9 @@ label {
 		<label>
 		Mascara 444-XXX-444:	<input origin-format="000-000-000" origin-mask="###-XXX-###" type="tel" ng-model="mask" />
 		</label>
-		
+
 
 	</div>
-	
+
 </body>
 </html>
