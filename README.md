@@ -1,6 +1,16 @@
 
 # origin-mask
-Validation and formatter component based in angular directives/services.
+Validation and formatter component based in angular directives/filters/services.
+
+## Features
+
+$Formatters - Provides needed methods for formatting data with default format or custom format.
+
+$Validators - Provides methods with validation algorithms.
+
+Filters - originFilter - Does models formatting.
+
+Input directive - originFormat - Does validation and formatting on user input.
 
 ### Suported:
 
