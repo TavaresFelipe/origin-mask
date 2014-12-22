@@ -8,7 +8,24 @@
 
 	        mask: function (value, mask){
 	        	//implement
-	        },
+                // ###.##X.XXX-#
+                // Where # represent visible numbers
+                // in 4444444444 out 444.44X.XXX-4
+
+                var output = "";
+                for (var i = 0; i < value.length; i++) {
+                    var valueChar = value.charAt(i);
+                    var maskChar = mask.charAt(i);
+
+                    if (maskChar === "#") {
+                        output += valueChar;
+                    } else {
+                        output += maskChar;
+                    }
+                }
+
+                return output;
+            },
 	        
 	        formatCustom: function (value, size, format) {
 	        	value = this.clean(value);
