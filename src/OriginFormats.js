@@ -29,7 +29,7 @@
 				var patternFormat = attrs.originFormat;
 				var patternMask = attrs.originMask;
 
-				elm.bind("keyup", function(){
+				elm.bind("keyup change", function(){
 					var value = ctrl.$viewValue;
 					var validateModel = attrs.validateModel;
 
