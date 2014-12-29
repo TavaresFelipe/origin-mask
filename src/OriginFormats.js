@@ -33,7 +33,7 @@
 					var key = $event.keyCode || $event.witch;
 					
 					//prevent space key
-					if (key == 32) {
+					if (key == 32 || key == 0) {
 						ctrl.$setViewValue(null);
 						ctrl.$render();
 					
