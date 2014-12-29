@@ -29,7 +29,17 @@
 				var patternFormat = attrs.originFormat;
 				var patternMask = attrs.originMask;
 
-				elm.bind("keyup change", function(){
+				elm.bind("keyup change", function($event){
+					var key = $event.keyCode || $event.witch;
+					
+					//prevent space key
+					if (key == 32) {
+						ctrl.$setViewValue(null);
+						ctrl.$render();
+					
+						return;
+					}
+					
 					var value = ctrl.$viewValue;
 					var validateModel = attrs.validateModel;
 
