@@ -54,6 +54,13 @@ Input directive - originFormat - Does validation and formatting on user input.
 Declare the format and validation, if it available. 
 If set a format that is not implemented, a custom format like a "4444-4444_44", then it will be use to format.
 
+Tip:
+
+To prevent spaces inputs, use:
+```
+ng-trim="false" 
+```
+
 ### validate-model="isValidaCpf"
 A model in controller scope, that will be updated when validation ends
 
