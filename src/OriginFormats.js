@@ -30,16 +30,6 @@
 				var patternMask = attrs.originMask;
 
 				elm.bind("keyup change", function($event){
-					var key = $event.keyCode || $event.witch;
-					
-					//prevent space key
-					if (key == 32 || key == 0) {
-						ctrl.$setViewValue(null);
-						ctrl.$render();
-					
-						return;
-					}
-					
 					var value = ctrl.$viewValue;
 					var validateModel = attrs.validateModel;
 
