@@ -13,7 +13,7 @@
 
 	var formats = [];
 	formats["rg"] = "00.000.000-0";
-	formats["cpf"] = "000.000.000.00";
+	formats["cpf"] = "000.000.000-00";
 	formats["cnpj"] = "00.000.000/0000-00";
 	formats["cep"] = "00.000-00";
 	formats["date"] = "00/00/0000";
