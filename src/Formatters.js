@@ -102,7 +102,7 @@
 	        	var ddd = number.substring(0,2);
 	        	var tel = number.substring(2);
 	        
-	        	if (ddd.length > 1) {
+	        	if (number.length > 2) {
 	        		ddd = ddd.replace(/(\d{0})(\d)/,"$1($2") + ") ";
 	        	}
 	        	
